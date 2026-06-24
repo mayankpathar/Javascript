@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s = [];
+
+        let index = 0;
+        let n = parseInt(prompt("Enter the number: "));
+
+    
+        for (let i = 0; i < n; i++) {
+            s[i] = prompt("Enter the sentence: ").split(" ");
+        }
+        let wo = prompt("Enter the word to search: ");
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] === wo) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index !== 0) {
+            document.write("index: " + index);
+        } else {
+            document.write("not found");
+        }
+    </script>
+</body>
+
+</html>

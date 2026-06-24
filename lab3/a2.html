@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = parseInt(prompt("enter the number: "))
+        let n = parseInt(prompt("enter the number: "))
+        let flag=0
+
+        for (let i = m; i <= n; i++) {
+            for (let j = 2; j <i ; j++) {
+                if (i%j==0) {
+                    flag=1
+
+                }
+                
+            }
+            if (flag==0) {
+             document.write(i)
+             document.write("</br>")
+             
+                
+            }
+            flag=0
+            
+        }
+    </script>
+</body>
+</html>

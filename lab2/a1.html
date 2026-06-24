@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt("enter the num1: "))
+        let n2 = parseInt(prompt("enter the num2: "))
+        let op = prompt("enter the op(+,-,*,/):")
+        let ans 
+        if(op == '+'){
+          ans=n1+n2
+        }else if(op == '-'){
+           ans=n1-n2
+        }else if(op == '*'){
+            ans=n1*n2
+        }else if(op == '/'){
+          if(n2 != 0){
+            ans = n1/n2
+          }else{
+            alert("invalid is num2")
+          }            
+        }else{
+            alert("invalid number")
+        }
+        alert("answer:"+ans)
+    </script>
+</body>
+</html>

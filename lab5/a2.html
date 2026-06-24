@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let may = ["mayank","om","nayan","raj","prit"]
+
+        may.push("suresh");
+        document.write("push: " + may);
+        may.pop();
+        document.write("<br>pop: " + may);
+        may.shift();
+        document.write("<br>shift: " + may);
+        may.unshift("ramesh");
+        document.write("<br>unshift: " + may);
+        may.splice(2, 1, "akhil");
+        document.write("<br>splice: " + may);
+        may.sort();
+        document.write("<br>sort: " + may);
+        may.reverse();
+        document.write("<br>reverse: " + may);
+        console.log(may);
+
+    </script>
+</body>
+</html>
