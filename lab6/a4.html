@@ -1,0 +1,28 @@
+display the current date , time,day,month,and year using the date object
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let today = new Date();
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        document.write("Current Date: " + today.getDate() + "<br>");
+        document.write("Current Month: " + months[today.getMonth()] + "<br>");
+        document.write("Current Year: " + today.getFullYear() + "<br>");
+        document.write("Current hours: " + today.getHours() + "<br>");
+        document.write("Current Minutes: " + today.getMinutes() + "<br>");
+        document.write("Current Seconds: " + today.getSeconds() + "<br>");
+        document.write("Current Day: " + days[today.getDay()] + "<br>");
+        document.write(today.toLocaleTimeString())
+    </script>
+</body>
+
+</html>
