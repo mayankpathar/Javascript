@@ -1,0 +1,70 @@
+<!-- 1. WAP to create a basic graphical Calculator using HTML and JavaScript. (A)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" align="center">
+      <tr>
+        <th colspan="4"><input type="text" id="mytext"></th>
+      </tr>
+      <tr>
+        <td><button onclick="clearText()">AC</button></td>
+       <td><button onclick="onedelete()">-></button></td>
+       <td><button onclick="display('%')">%</button></td>
+        <td><button onclick="display('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="display('7')">7</button></td>
+        <td><button onclick="display('8')">8</button></td>
+        <td><button onclick="display('9')">9</button></td>
+        <td><button onclick="display('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="display('4')">4</button></td>
+        <td><button onclick="display('5')">5</button></td>
+        <td><button onclick="display('6')">6</button></td>
+        <td><button onclick="display('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="display('1')">1</button></td>
+        <td><button onclick="display('2')">2</button></td>
+        <td><button onclick="display('3')">3</button></td>
+        <td><button onclick="display('+')">+</button></td>
+        
+      </tr>
+      <tr>
+        <td><button onclick="display('0')">0</button></td>
+        <td><button onclick="display('.')">.</button></td>
+        <td colspan="2" align="center"><button onclick="calculate()">=</button></td>
+            
+      </tr>
+    </table>
+<script>
+    function display(num){
+     document.getElementById('mytext').value+=num
+    }
+    function clearText(){
+        document.getElementById('mytext').value=" "
+    }
+    function onedelete(){
+        value=document.getElementById('mytext').value
+        document.getElementById('mytext').value=value.slice(0,-1)
+    }
+    function calculate(){
+       value=document.getElementById('mytext').value
+        if(value){
+            document.getElementById('mytext').value=eval(value)
+        }
+    }
+</script>
+</body>
+</html>
