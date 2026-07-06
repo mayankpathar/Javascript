@@ -45,7 +45,7 @@
                 return false;
             }
 
-            const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,12}$/;
+            const passwordRegex = /^(0-9)$/;
             if (!passwordRegex.test(password)) {
                 alert("Password must be 8-12 characters long, contain at least 1 digit and 1 special character.");
                 return false;

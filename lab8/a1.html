@@ -1,0 +1,27 @@
+<!-- WAP to change background color on click of button. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   #myy{
+        background-color: red;
+    }
+    </style>
+</head>
+<body id="myy">
+    <button id="my">click</button>
+    <script>
+        document.getElementById("my").addEventListener('click',function(){
+            document.body.style.backgroundColor = "blue";
+        })
+        document.getElementById("my").addEventListener('dblclick',function(){
+            document.body.style.backgroundColor = "white";
+        })
+        
+        
+    </script>
+</body>
+</html>
