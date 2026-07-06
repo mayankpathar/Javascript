@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="repeatPassword">Repeat Password:</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="enrollment">Enrollment Number:</label>
+        <input type="text" id="enrollment" name="enrollment" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeatPassword').value;
+            const dobValue = document.getElementById('dob').value;
+            const dob = new Date(dobValue);
+            const enrollment = document.getElementById('enrollment').value;
+            const email = document.getElementById('email').value;
+
+           
+            if (username.length < 8) {
+                alert("Username must be at least 8 characters long.");
+                return false;
+            }
+
+            const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,12}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must be 8-12 characters long, contain at least 1 digit and 1 special character.");
+                return false;
+            }
+
+           
+            if (password !== repeatPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+           
+            if (!dobValue || Number.isNaN(dob.getTime())) {
+                alert("Please enter a valid date of birth.");
+                return false;
+            }
+
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDifference = today.getMonth() - dob.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() <= dob.getDate())) {
+                age--;
+            }
+
+            if (age <= 18) {
+                alert("You must be older than 18 years.");
+                return false;
+            }
+
+            const enrollmentRegex = /^\d{11}$/;
+            if (!enrollmentRegex.test(enrollment)) {
+                alert("Enrollment number must be exactly 11 digits.");
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+</body>
+</html>
