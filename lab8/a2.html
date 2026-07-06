@@ -1,11 +1,50 @@
+<!-- WAP to recognize which mouse event is ƒired -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            align-self: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="box" align="center">all mouse event</div>
+    <script>
+        document.getElementById("box").addEventListener('mousedown',function(){
+            document.getElementById("box").innerHTML="mouse down event is fired"
+        })
+         document.getElementById("box").addEventListener('mouseup',function(){
+            document.getElementById("box").innerHTML="mouse up event is fired"
+        })  
+      
+         document.getElementById("box").addEventListener('mouseover',function(){
+            document.getElementById("box").innerHTML="mouse over event is fired"
+        })  
+         document.getElementById("box").addEventListener('mouseout',function(){
+            document.getElementById("box").innerHTML="mouse out event is fired"
+        })  
+         document.getElementById("box").addEventListener('mousemove',function(){
+            document.getElementById("box").innerHTML="mouse move event is fired"
+        })
+         document.getElementById("box").addEventListener('contextmenu',function(){
+            document.getElementById("box").innerHTML="mouse context menu event is fired"
+        })
+             document.getElementById("box").addEventListener('click',function(){
+            document.getElementById("box").innerHTML="mouse click event is fired"
+        })
+             document.getElementById("box").addEventListener('dblclick',function(){
+            document.getElementById("box").innerHTML="mouse double click event is fired"
+        })
+
+
+
+    </script>
 </body>
 </html>
