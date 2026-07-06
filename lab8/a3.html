@@ -1,0 +1,31 @@
+<!-- WAP to recognize which keyboard event is fired. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+    <input type="text" id="myInput" placeholder="Type something...">
+    <p id="eventInfo"></p>
+
+    <script>
+        const input = document.getElementById('myInput');
+        const eventInfo = document.getElementById('eventInfo');
+
+        input.addEventListener('keydown', function(event) {
+            eventInfo.textContent = `Key Down: ${event.key}`;
+        });
+
+        input.addEventListener('keyup', function(event) {
+            eventInfo.textContent = `Key Up: ${event.key}`;
+        });
+
+        input.addEventListener('keypress', function(event) {
+            eventInfo.textContent = `Key Press: ${event.key}`;
+        });
+    </script>
+ </body>
+ </html>
