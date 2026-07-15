@@ -22,6 +22,7 @@
     </table>
     <script>
         let arr = []
+        let currentEditIndex = -1
 
         function display(){
             let temp = ''
@@ -30,7 +31,7 @@
                 <tr>
                     <td>${i+1}</td>
                     <td>${arr[i]}</td>
-                    <td><button onclick=Edit()>Edit</button><button onclick=remove()>Delete</button></td>
+                    <td><button onclick="Edit(${i})">Edit</button><button onclick="remove(${i})">Delete</button></td>
                 </tr>`
             
             }
@@ -39,7 +40,7 @@
         }
 
         function addRow(){
-            temp = document.getElementById("name").value
+            let temp = document.getElementById("name").value
             arr.push(temp);
             display();
             document.getElementById("name").value = ""
@@ -50,15 +51,18 @@
             display();
         }
         function Edit(i){
-            document.getElementById("name").value =temp
-    
-             
-            
+            currentEditIndex = i
+            document.getElementById("name").value = arr[i]
         }
 
-        function updateName(i){
-            let temp = document.getElementById("name").value
-         
+        function updateName(){
+            if(currentEditIndex !== -1){
+                let temp = document.getElementById("name").value
+                arr[currentEditIndex] = temp
+                display();
+                document.getElementById("name").value = ""
+                currentEditIndex = -1
+            }
         }
     </script>
 </body>
