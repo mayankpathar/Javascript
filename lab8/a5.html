@@ -6,64 +6,58 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="text">Name</label>
-    <input type="text" id="name">
-    <button onclick="addRow()">Add</button>
-    <button onclick="updateName()">Update</button>
-    <table border="1">
+    <input type="text" id="inp">
+    <button id="add" onclick="AddStudent()">Add</button>
+    <button id="update" onclick="UpdateStu()">Update</button>
+    <table>
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Action</th>
-            </tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Action</th>
         </thead>
-        <tbody id="tableBody"></tbody>
+        <tbody id="body"></tbody>
     </table>
+
     <script>
         let arr = []
-        let currentEditIndex = -1
 
-        function display(){
+        function AddStudent(){
+            temp = document.getElementById('inp').value
+            arr.push(temp)
+            Display()
+            document.getElementById("inp").value = ""
+        }
+
+        function Display(){
             let temp = ''
-            for(let i= 0; i<arr.length; i++){
-            temp+= `
-                <tr>
-                    <td>${i+1}</td>
-                    <td>${arr[i]}</td>
-                    <td><button onclick="Edit(${i})">Edit</button><button onclick="remove(${i})">Delete</button></td>
+            for (let index = 0; index < arr.length; index++) {
+                temp += `<tr>
+                <td>${index+1}</td>
+                <td>${arr[index]}</td>
+                <td><button onclick="deleteStu(${index})">Delete</button><button onclick="editStu(${index})">Edit</button></td>
                 </tr>`
-            
             }
 
-            document.getElementById("tableBody").innerHTML = temp
+            document.getElementById("body").innerHTML = temp
         }
 
-        function addRow(){
-            let temp = document.getElementById("name").value
-            arr.push(temp);
-            display();
-            document.getElementById("name").value = ""
-        }
-
-        function remove(i){
+        function deleteStu(i){
             arr.splice(i,1)
-            display();
-        }
-        function Edit(i){
-            currentEditIndex = i
-            document.getElementById("name").value = arr[i]
+            Display()
         }
 
-        function updateName(){
-            if(currentEditIndex !== -1){
-                let temp = document.getElementById("name").value
-                arr[currentEditIndex] = temp
-                display();
-                document.getElementById("name").value = ""
-                currentEditIndex = -1
-            }
+        function editStu(i){
+            document.getElementById("inp").value = arr[i]
+            index = i
         }
+
+        function UpdateStu(){
+            arr[index] = document.getElementById("inp").value
+            Display()
+            document.getElementById("inp").value = ""
+        }
+
+        
     </script>
 </body>
 </html>
