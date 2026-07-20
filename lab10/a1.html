@@ -7,7 +7,11 @@
     <style>
         body{
             overflow: hidden;
+            background: url(./snakeback.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
         #snake{
             position:absolute;
             left:0px;
@@ -22,18 +26,19 @@
             width:40px;
             height:40px;
         }
+        h2{
+            color: aliceblue;
+        }
+
     </style>
 </head>
 <body onkeydown="checkInput(event)">
-    <button onclick="startLeft()">Left</button>
-    <button onclick="startRight()">Right</button>
-    <button onclick="startTop()">Top</button>
-    <button onclick="startBottom()">Bottom</button>
+    
     
     <h2>Current Life : <span id="currentLife">3</span></h2>
     <h2>Current Score : <span id="currentScore">0</span></h2>
     
-    <img src="./snake.jpg" id="snake">
+    <img src="./snake2.webp" id="snake">
     <img src="./laddu.jpg" id="laddu">
     
     <script>
@@ -76,6 +81,7 @@
             snake.style.left=currentX+"px";
             checkLimit();
         } 
+        
         function startLeft(){
             clearInterval(intRef);
             intRef=setInterval(moveLeft,currentSpeed);
@@ -159,7 +165,7 @@
         
             laddu.style.left=ladduX+"px";
             laddu.style.top=ladduY+"px";
-            clearInterval(intRef);
+           
         
         }
         changeLadduPosition();
