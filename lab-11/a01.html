@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Students {
+            constructor(name,age,phoneno) {
+                this.name=name;
+                this.age=age;
+                this.phoneno=phoneno;
+            }
+            display(){
+                console.log("name: ",this.name);
+                console.log("age: ",this.age);
+                console.log("phoneno: ",this.phoneno);
+            }
+            
+        }
+        const Student1 = new Students("mayank","18","9274488638");
+        const Student2 = new Students("om","18","99278844639");
+        Student1.display();
+        Student2.display();
+    </script>
+</body>
+</html>
